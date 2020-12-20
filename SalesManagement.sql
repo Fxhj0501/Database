@@ -1,19 +1,19 @@
 CREATE TABLE Customer(
-	customerId INT NOT NULL,
+	customerId varchar(20) NOT NULL,
 	customerName VARCHAR(100) NOT NULL,
 	customerAge INT NOT NULL,
 	PRIMARY KEY(customerId)
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE Order_Form(
-	orderFormId INT NOT NULL,
-	orderFormAmount INT NOT NULL,
+	orderFormId varchar(20) NOT NULL,
+	orderFormAmount DOUBLE NOT NULL,
 	orderFormTime DATE NOT NULL,
 	PRIMARY KEY(orderFormId)
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE Seller(
-	sellerId INT NOT NULL,
+	sellerId varchar(20) NOT NULL,
 	sellerAge INT NOT NULL,
 	sellerName VARCHAR(100) NOT NULL,
 	PRIMARY KEY(sellerId)
@@ -28,8 +28,10 @@ CREATE TABLE Product(
 CREATE TABLE Supplier(
 	supplierName VARCHAR(100) NOT NULL,
 	supplierCity VARCHAR(100) NOT NULL,
+	productId INT,
+	FOREIGN KEY (productId) REFERENCES Product(productId),
 	PRIMARY KEY(supplierName,supplierCity)
 )ENGINE = InnoDB DEFAULT CHARSET = utf8;
+alert table Order_Form drop column orderFormAmount;
 
-INSERT INTO Customer(customerId,customerName,customerAge)
-VALUES("18072004","冯子健","20");
+alter table Order_Form alter column orderFormAmount set DEFAULT 0.00;

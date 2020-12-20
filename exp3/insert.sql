@@ -83,3 +83,4 @@ insert into 收藏(图书馆号,ISBN,收藏日期) values
 ("L00003","7030230522","2008-01-01");
 
 delete from 收藏 where 图书馆号 = "L00001";
+	
