@@ -6,5 +6,3 @@ select * from view_sales_M order by orderFormTime asc;
 update view_sales_M set orderFormAmount = 1000.2 where orderFormTime = "2020-12-17";
 delete from view_sales_M where orderFormId = "A0005";
 create view view_sales_M_2  with ENCRYPTION as select orderFormTime,orderFormAmount from Order_Form;
-
-create index IX_orderFormId on Order_Form(orderFormId);

@@ -14,3 +14,4 @@ insert into Order_Form(orderFormId,orderFormTime,orderFormAmount) values
 	("A0005","2020-02-23",26.23);
 
 select * from Order_Form order by orderFormTime desc,orderFormAmount asc;
+
